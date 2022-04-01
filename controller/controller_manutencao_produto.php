@@ -25,15 +25,22 @@ class ControllerManutencaoProduto {
     }
 
     protected function setNovoProduto() {
-       $sProdutoNome = $_POST['produto_nome'];
-       $xProdutoValor = $_POST['produto_valor'];
-       $iProdutoQuantidade = $_POST['produto_quantidade'];
-
-       return var_dump($sProdutoNome);
+        $sProdutoNome = $_POST['produto_nome'];
+        $xProdutoValor = $_POST['produto_valor'];
+        $iProdutoQuantidade = $_POST['produto_quantidade'];
+        $this->escreveTxt(Array('produto_nome' => $sProdutoNome, 
+                                'produto_valor' => $xProdutoValor, 
+                                'produto_quantidade' => $iProdutoQuantidade));
     }
 
-    protected function criaTxt() {
-        
+    protected function criaTxt($bCriaTxt = true) {
+        if($bCriaTxt) {
+            $xTxt = fopen("produto.txt", "w") or die("Ocorreu erro na criação do arquivo");
+        }
+    }
+
+    protected function escreveTxt($aParametro) {
+        var_dump($aParametro);
     }
 
     protected function montaTela() {
