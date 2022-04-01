@@ -28,19 +28,26 @@ class ControllerManutencaoProduto {
         $sProdutoNome = $_POST['produto_nome'];
         $xProdutoValor = $_POST['produto_valor'];
         $iProdutoQuantidade = $_POST['produto_quantidade'];
-        $this->escreveTxt(Array('produto_nome' => $sProdutoNome, 
+        $this->escreveTxt(implode(" ", Array('produto_nome' => $sProdutoNome, 
                                 'produto_valor' => $xProdutoValor, 
-                                'produto_quantidade' => $iProdutoQuantidade));
+                                'produto_quantidade' => $iProdutoQuantidade . "\n")));
     }
 
     protected function criaTxt($bCriaTxt = true) {
         if($bCriaTxt) {
-            $xTxt = fopen("produto.txt", "w") or die("Ocorreu erro na criação do arquivo");
+            $xTxt = fopen("txt/produto.txt", "a+") or die("Ocorreu erro na criação do arquivo");
+
+            return $xTxt;
         }
     }
 
     protected function escreveTxt($aParametro) {
-        var_dump($aParametro);
+       $xTxt = $this->criaTxt();
+       if(fwrite($xTxt, $aParametro)){
+        ?>
+            <script>window.alert('Produto cadastrado com sucesso!');</script>
+        <?php
+       }
     }
 
     protected function montaTela() {
