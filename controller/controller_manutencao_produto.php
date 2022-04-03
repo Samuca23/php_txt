@@ -19,8 +19,18 @@ class ControllerManutencaoProduto {
                 case $sAcao == 'cadastrar':
                     return $this->setNovoProduto();
                 case $sAcao == 'listar':
+                    $this->getChamaListagem();
                     break;
             }
+        }
+    }
+
+    protected function getChamaListagem($bChamaListagem = true) {
+        if($bChamaListagem) {
+            require_once('controller/controller_consulta_produto.php');
+            $oListagem = new ControllerConsultaProduto;
+
+            return $oListagem->abreListagem();
         }
     }
 
@@ -28,9 +38,9 @@ class ControllerManutencaoProduto {
         $sProdutoNome = $_POST['produto_nome'];
         $xProdutoValor = $_POST['produto_valor'];
         $iProdutoQuantidade = $_POST['produto_quantidade'];
-        $this->escreveTxt(implode(" ", Array('produto_nome' => $sProdutoNome, 
+        $this->escreveTxt(json_encode( Array('produto_nome' => $sProdutoNome, 
                                 'produto_valor' => $xProdutoValor, 
-                                'produto_quantidade' => $iProdutoQuantidade . "\n")));
+                                'produto_quantidade' => $iProdutoQuantidade)). "\n");
     }
 
     protected function criaTxt($bCriaTxt = true) {

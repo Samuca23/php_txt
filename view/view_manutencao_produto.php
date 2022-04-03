@@ -33,6 +33,9 @@ namespace view\ViewManutencaoProduto;
 
             <button class="btn btn-success">Cadastrar</button>
         </form>
+        <form action="?acao=listar" method="POST">
+            <button class="btn btn-secondary">Listagem</button>
+        </form>
     </div>
 </body>
 </html>
