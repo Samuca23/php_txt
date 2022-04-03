@@ -17,6 +17,6 @@
     <title>Listagem de Produto</title>
 </head>
 <body>
-    <h1>Samuel</h1>
+    
 </body>
 </html>

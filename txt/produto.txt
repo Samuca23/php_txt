@@ -1,6 +1,3 @@
-er re re
-er re re
-asd 123 321
-asd 123 321
-Conrado 10 1
-{"produto_nome":"Conrado","produto_valor":"10","produto_quantidade":"1\n"}{"produto_nome":"","produto_valor":"","produto_quantidade":"\n"}
+{"produto_nome":"teste","produto_valor":"1","produto_quantidade":"1"}
+{"produto_nome":"samuel","produto_valor":"123","produto_quantidade":"123"}
+{"produto_nome":"aaaaa","produto_valor":"1","produto_quantidade":"1"}

@@ -40,7 +40,7 @@ class ControllerManutencaoProduto {
         $iProdutoQuantidade = $_POST['produto_quantidade'];
         $this->escreveTxt(json_encode( Array('produto_nome' => $sProdutoNome, 
                                 'produto_valor' => $xProdutoValor, 
-                                'produto_quantidade' => $iProdutoQuantidade . "\n")));
+                                'produto_quantidade' => $iProdutoQuantidade)). "\n");
     }
 
     protected function criaTxt($bCriaTxt = true) {
