@@ -17,15 +17,19 @@ class ControllerConsultaProduto {
         $oFopenFile = fopen("txt/produto.txt", "rb");
         $oFile = "txt/produto.txt";
         $aDado = fread($oFopenFile, filesize($oFile));
-        $aDado = (explode("}", $aDado));
 
         $this->listaDado($aDado);
     }
-
+    
     protected function listaDado($aDado) {
-        foreach($aDado as $key => $oDado) {
-            //$oDado = json_decode($oDado);
-            echo $oDado;
+        json_decode($aDado, true);
+        if(json_last_error() == 0){
+            foreach($aDado as $key => $oDado) {
+                echo $oDado;
+                echo "<br>";
+            }
+        }else {
+            echo json_last_error();
         }
     }
 

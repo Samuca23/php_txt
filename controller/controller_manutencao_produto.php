@@ -38,9 +38,9 @@ class ControllerManutencaoProduto {
         $sProdutoNome = $_POST['produto_nome'];
         $xProdutoValor = $_POST['produto_valor'];
         $iProdutoQuantidade = $_POST['produto_quantidade'];
-        $this->escreveTxt(json_encode( Array('produto_nome' => $sProdutoNome, 
+        $this->escreveTxt(Array('produto_nome' => $sProdutoNome, 
                                 'produto_valor' => $xProdutoValor, 
-                                'produto_quantidade' => $iProdutoQuantidade)). "\n");
+                                'produto_quantidade' => $iProdutoQuantidade));
     }
 
     protected function criaTxt($bCriaTxt = true) {
@@ -53,7 +53,8 @@ class ControllerManutencaoProduto {
 
     protected function escreveTxt($aParametro) {
        $xTxt = $this->criaTxt();
-       if(fwrite($xTxt, $aParametro)){
+       $oDado = json_encode($aParametro);
+       if(fwrite($xTxt, $oDado)){
         ?>
             <script>window.alert('Produto cadastrado com sucesso!');</script>
         <?php

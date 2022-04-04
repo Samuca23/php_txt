@@ -1,3 +1,1 @@
-{"produto_nome":"teste","produto_valor":"1","produto_quantidade":"1"}
-{"produto_nome":"samuel","produto_valor":"123","produto_quantidade":"123"}
-{"produto_nome":"aaaaa","produto_valor":"1","produto_quantidade":"1"}
+[{"produto_nome":"Caf\u00e9","produto_valor":"10","produto_quantidade":"3"}][1,{"produto_nome":"Energetico","produto_valor":"2","produto_quantidade":"15"}][1,{"produto_nome":"Energetico","produto_valor":"10","produto_quantidade":"3"}]
